@@ -65,5 +65,6 @@ void    dispWAVHeader(char filename[]){
         printf("Bits per sample: %d\n", mh.bitsPerSample);
         printf("  subchunk 2 ID: ");
         printID(mh.subchunk2ID);
-printf("  subchunk 2 size: %d\n", mh.subchunk2Size);
+	printf("  subchunk 2 size: %d\n", mh.subchunk2Size);
+	// to be continue
 }
