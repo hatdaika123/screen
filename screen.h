@@ -1,8 +1,10 @@
+#define UNICODE     //use unicode to make good-looking bar
+#define BAR "\u2590"
+#define ESC 0x1b
 // constant definitions
-#define ESC 0x1B
-enum COLORS {BLACK=30, RED, GREEN, YELLOW, BLUE, MAGNETA, CYAN, WHITE};
+enum COLORS {BLACK = 30, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE};
 
-//functions prototypes
+//functions prototype
 void clearScreen(void);
 void gotoxy(int row, int col);
 void setColor(int color);

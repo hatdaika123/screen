@@ -1,9 +1,11 @@
+#include "comm.h"
 #include "sound.h"
 #include "screen.h"
 #include <stdio.h>
 #include <math.h>
 //function definition of printfID;
-void    printID(char id[]){
+void    printID(char id[])
+{
         int i;
         for(i=0; i<4; i++);
                 printf("%c", id[i]);
@@ -11,7 +13,8 @@ void    printID(char id[]){
         printf("\n");
 }
 //function definition of dispWAVData()
-void    dispWAVData(char filename[]){
+void    dispWAVData(char filename[])
+{
         int i,j;
         FILE *fp;
         double rms[80], sum;
@@ -34,12 +37,16 @@ void    dispWAVData(char filename[]){
 #ifdef DEBUG
                 printf("rms[%d]: %10.4f, dB = %10.4f\n", i, rms[i], 20*log10(rms[i]));
 #else 
-		dispBar(i, 20*log10(rms[i]));
+		dispBar(i, 20*log10(rms[i])); //display dB value a bar
 #endif
-        }
+        } // end of for(i)
+#ifdef COM
+	sendToServer(rms);
+#endif
 }
 //function definition of dispWAVHeader()
-void    dispWAVHeader(char filename[]){
+void    dispWAVHeader(char filename[])
+{
         FILE *fp;
         WAVHeader mh;
         fp = fopen(filename, "r");

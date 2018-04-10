@@ -3,7 +3,7 @@
 #define SAMPLERATE 16000
 
 //struct / union definition
-typedef struct{
+typedef struct {
         char chunkID[4];        // "RIFF"
         unsigned int chunkSize; // 4 bytes
         char format[4];         // "WAVE"
